@@ -1,4 +1,4 @@
 Setup dev environment
-- stay at Web folder
-- $ npm install uglify-js coffee-script clean-css watcher -g
+- stay at  totinh folder
+- $ npm install uglify-js coffee-script
 - $ npm install
