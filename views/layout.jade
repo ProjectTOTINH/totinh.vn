@@ -21,4 +21,32 @@ html
     block headerBlock
     
   body
-    
+    input#server_language(type="hidden",value="#{lang}")
+    script(type="text/javascript")
+      require.config({
+        baseUrl: "/js/modules"
+        , paths: { 
+          'jquery': '../libs/jquery.min'
+          , 'backbone': '../libs/backbone'
+          , 'underscore': '../libs/underscore'
+          , 'text': '../libs/text'
+          , 'mediator': '../libs/mediator-2'
+          , 'i18n': '../libs/i18n'
+        }
+      });
+      
+      function getNameWithTimestamp(name) {
+        return name + '#{timestamp}';
+      }
+      
+      function getJSFileNameWithTimestamp(name) {
+        return getNameWithTimestamp(name) + '.js';
+      }
+      
+      function getNameTempFileWithTimestamp(name) {
+        return getNameWithTimestamp(name) + '.temp';
+      }
+      
+    center
+      .container
+        block mainContentBlock

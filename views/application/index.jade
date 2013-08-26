@@ -2,3 +2,16 @@ extends ../layout
 
 block headerBlock
   .divDemo this is header
+  
+block mainContentBlock
+  .mainContainer
+  
+  script(type="text/javascript")
+    require(
+      [
+        getNameWithTimestamp('application/views/index')
+        , getNameWithTimestamp("utility")
+        , 'mediator'
+      ], function(indexSetup) {
+        indexSetup();
+    });
